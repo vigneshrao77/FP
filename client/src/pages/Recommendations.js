@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useLeetCode, derivePoints, deriveSkillGaps, deriveRecommendations } from '../context/LeetCodeContext';
 import { Link } from 'react-router-dom';
+import AIAssistant from '../components/AIAssistant';
+
 
 const LC_URL = (slug) => `https://leetcode.com/problems/${slug}/`;
 
@@ -109,7 +111,11 @@ const Recommendations = () => {
         </div>
       </div>
 
+      {/* AI Mentor Section */}
+      <AIAssistant />
+
       {/* Recommended Problems */}
+
       <div className="bg-white rounded-lg shadow-md p-6">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-xl font-semibold text-gray-900">

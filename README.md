@@ -32,34 +32,54 @@ A full-stack web application for coding challenges, evaluation, and competitive 
 - Node.js (v16 or higher)
 - MongoDB (local or Atlas)
 
-### Installation
+### Installation & Setup
 
-1. Clone and extract the project
-2. Install dependencies:
+1. **Clone the repository**
+```bash
+git clone https://github.com/vigneshrao77/FP.git
+cd FP
+```
+
+2. **Install all dependencies** (This installs both client and server packages)
 ```bash
 npm run install-all
 ```
 
-3. Set up environment variables:
-```bash
-# In server/.env
+3. **Set up environment variables**
+You will need to create two `.env` files (one in the `server` folder and one in the `client` folder).
+
+**Create `server/.env`:**
+```env
+# MongoDB Connection String (Local or Atlas)
 MONGODB_URI=your_mongodb_connection_string
 
-JWT_SECRET=your_jwt_secret
+# JWT Secret for Authentication
+JWT_SECRET=your_super_secret_jwt_key
+
+# Port for Backend Server
 PORT=5000
 
-# In client/.env
+# OpenRouter API Key for the AI DSA Mentor
+# Get your free key at: https://openrouter.ai/
+OPENROUTER_API_KEY=your_openrouter_api_key_here
+```
+
+**Create `client/.env`:**
+```env
 REACT_APP_API_URL=http://localhost:5000
 ```
 
-4. Start the development servers:
+4. **Start the development servers**
+Run this command from the root directory to start both the frontend and backend concurrently:
 ```bash
 npm run dev
 ```
 
-The application will be available at:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:5000
+### Accessing the Application
+- **Frontend (UI)**: [http://localhost:3000](http://localhost:3000)
+- **Backend (API)**: [http://localhost:5000](http://localhost:5000)
+
+> **Note on AI Features**: To use the AI DSA Mentor on the Recommendations page, you **must** provide a valid `OPENROUTER_API_KEY` in your `server/.env` file. Without it, the AI Chat feature will fail to respond.
 
 ## Project Structure
 

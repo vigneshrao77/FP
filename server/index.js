@@ -12,6 +12,8 @@ const leaderboardRoutes = require('./routes/leaderboard');
 const profileRoutes = require('./routes/profile');
 const recommendationRoutes = require('./routes/recommendations');
 const leetcodeRoutes = require('./routes/leetcode');
+const aiRoutes = require('./routes/ai');
+
 
 const app = express();
 const PORT = process.env.PORT || 5000;
@@ -39,6 +41,8 @@ app.use('/api/leaderboard', leaderboardRoutes);
 app.use('/api/profile', profileRoutes);
 app.use('/api/recommendations', recommendationRoutes);
 app.use('/api/leetcode', leetcodeRoutes);
+app.use('/api/ai', aiRoutes);
+
 
 // Health check endpoint
 app.get('/api/health', (req, res) => {
